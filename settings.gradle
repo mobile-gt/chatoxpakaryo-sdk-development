@@ -1,0 +1,7 @@
+include ':chatosdk:ggfw-ui'
+include ':chatosdk:ggfw'
+include ':chatosdk:chato-emoticon'
+include ':chatosdk'
+include ':chatosdk:chato-widget'
+include ':app'
+rootProject.name = "Chatoxpakaryo"
