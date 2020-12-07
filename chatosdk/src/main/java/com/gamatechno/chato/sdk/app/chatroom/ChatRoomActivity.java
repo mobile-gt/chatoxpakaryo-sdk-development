@@ -502,13 +502,13 @@ public class ChatRoomActivity extends BaseChatRoomActivity implements ChatRoomVi
                         presenter.starChat(ChatroomHelper.getSelectedOneChat(chatList), chatRoomUiModel.getRoom_id());
                         sterilizeChat();
                         break;
-                     case StringConstant.appbar_info:
-                         if(isRoomAGroup(chatRoomUiModel)){
-                             presenter.getGroupMessageInfo(ChatroomHelper.getSelectedOneChat(chatList), chatRoomUiModel.getRoom_id());
-                         } else {
-                             presenter.getMessageInfo(ChatroomHelper.getSelectedOneChat(chatList));
-                         }
-                         sterilizeChat();
+                    case StringConstant.appbar_info:
+                        if(isRoomAGroup(chatRoomUiModel)){
+                            presenter.getGroupMessageInfo(ChatroomHelper.getSelectedOneChat(chatList), chatRoomUiModel.getRoom_id());
+                        } else {
+                            presenter.getMessageInfo(ChatroomHelper.getSelectedOneChat(chatList));
+                        }
+                        sterilizeChat();
                         break;
 
                 }
@@ -1299,7 +1299,7 @@ public class ChatRoomActivity extends BaseChatRoomActivity implements ChatRoomVi
     @Override
     public void checkListMessageStatus(List<Chat> list_message_with_status) {
         Log.d(TAG, "checkListMessageStatus: "+list_message_with_status.get(0).getMessage_id() + ","
-        + list_message_with_status.get(0).getMessage_status());
+                + list_message_with_status.get(0).getMessage_status());
         if(list_message_with_status.size()>0){
 //            if(list_message_with_status.get(0).getFrom_user_id() == Integer.valueOf(chatRoomUiModel.getUser_id())){
             if(list_message_with_status.get(0).getRoom_id().equals(chatRoomUiModel.getRoom_id())){
@@ -1549,12 +1549,13 @@ public class ChatRoomActivity extends BaseChatRoomActivity implements ChatRoomVi
 
     @Override
     public void onBackPressed() {
+
         if(appbar_action.getVisibility() == View.VISIBLE){
             onActionBarBack();
         } else {
-            if(isFinishNeedtoIn){
+            /*if(isFinishNeedtoIn){
                 startActivity(new Intent(getContext(), ChatoActivity.class));
-            }
+            }*/
             super.onBackPressed();
         }
     }
